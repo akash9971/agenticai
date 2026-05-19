@@ -1,0 +1,5 @@
+# Install on top of requirements.txt for Snowflake support
+-r requirements.txt
+
+snowflake-connector-python>=3.7.0
+snowflake-snowpark-python>=1.20.0

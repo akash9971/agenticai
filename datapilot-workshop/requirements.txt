@@ -1,0 +1,28 @@
+streamlit>=1.36
+pandas>=2.2
+plotly>=5.22
+python-dotenv>=1.0
+sqlalchemy>=2.0
+faker>=25.0
+
+# LLM (Groq is the default, free, fast)
+langchain>=0.3,<2.0
+langchain-core>=0.3,<2.0
+langchain-groq>=0.2,<1.0
+langgraph>=0.2,<2.0
+
+# MCP - the spine of the architecture
+mcp>=1.0
+# Pin <0.2: 0.2.x imports langchain_core.messages.content which doesn't exist
+# in langchain-core 0.3.x (what the rest of the workshop uses).
+langchain-mcp-adapters>=0.1,<0.2
+nest-asyncio>=1.6
+
+# RAG (Module 09) - second in-house MCP server with semantic search.
+# ChromaDB ships its own ONNX-runtime embedding (all-MiniLM-L6-v2),
+# so we don't pull torch / sentence-transformers (saves ~2 GB).
+chromadb>=0.5
+
+# Dev / authoring
+pytest>=8.0
+python-pptx>=1.0

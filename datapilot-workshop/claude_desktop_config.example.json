@@ -1,0 +1,26 @@
+{
+  "_comment_": "Copy this into %APPDATA%\\Claude\\claude_desktop_config.json on Windows. Replace <REPO_ABS_PATH> with the absolute path to this project (forward slashes OK on Windows).",
+  "mcpServers": {
+    "datapilot-dq": {
+      "command": "python",
+      "args": [
+        "<REPO_ABS_PATH>/student/mcp_servers/dq_server.py",
+        "<REPO_ABS_PATH>/data/shopflow.db"
+      ]
+    },
+    "datapilot-rag": {
+      "command": "python",
+      "args": [
+        "<REPO_ABS_PATH>/student/mcp_servers/rag_server.py"
+      ]
+    },
+    "shopflow-sqlite": {
+      "command": "uvx",
+      "args": [
+        "mcp-server-sqlite",
+        "--db-path",
+        "<REPO_ABS_PATH>/data/shopflow.db"
+      ]
+    }
+  }
+}
